@@ -107,7 +107,7 @@ python3 run_single_learn_phi_ope_main.py --outfile <result-file-name> --seed 0 -
 The results can be viewed in "result-file-name". The data is stored as a python dictionary. See `run_single_learn_phi_ope_main.py` to see the format.
 
 
-## Citation ##
+## Citation
 If you found any part of this code useful, please consider citing our paper:
 
 ```
@@ -118,4 +118,8 @@ If you found any part of this code useful, please consider citing our paper:
   booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
   year={2023},
 }
+
 ```
+## Contact
+
+If you have any questions, please feel free to email: pavse@wisc.edu!
