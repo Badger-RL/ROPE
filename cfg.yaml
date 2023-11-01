@@ -1,0 +1,53 @@
+Swimmer:
+  observation_space: 40
+  action_space: 19
+  batch_sizes: [10, 100]
+  medium-expert: [0.5, 0.5, 0.] # [expert, medium, random]
+  custom:
+    expert: 350_000
+    medium: 220_000
+HumanoidStandup:
+  observation_space: 376
+  action_space: 17
+  batch_sizes: [10, 100]
+  medium-expert: [0.5, 0.5, 0.]
+  custom:
+    expert: 350_000
+    medium: 200_000
+Cheetah:
+  observation_space: 17
+  action_space: 6
+  batch_sizes: [10, 100]
+  random: [0., 0., 1.] # mix proportions (see above)
+  medium: [0., 1., 0.]
+  medium-expert: [0.5, 0.5, 0.]
+  expert: [1., 0., 0.]
+  custom:
+    expert: 420_000
+    medium: 60_000
+  d4rl:
+    expert: 10
+    medium: 5
+    pi_url: 'halfcheetah_online_{}.pkl'
+Hopper:
+  observation_space: 11
+  action_space: 3
+  random: [0., 0., 1.]
+  medium: [0., 1., 0.]
+  medium-expert: [0.5, 0.5, 0.]
+  expert: [1., 0., 0.]
+  d4rl:
+    expert: 10
+    medium: 5
+    pi_url: 'hopper_online_{}.pkl'
+Walker:
+  observation_space: 17
+  action_space: 6
+  random: [0., 0., 1.]
+  medium: [0., 1., 0.]
+  medium-expert: [0.5, 0.5, 0.]
+  expert: [1., 0., 0.]
+  d4rl:
+    expert: 10
+    medium: 5
+    pi_url: 'walker_online_{}.pkl'
