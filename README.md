@@ -94,12 +94,13 @@ Common information:
 
 
 **1. Training FQE**
-
+Executes FQE using the original/native state-action pairs.
 ```
 python3 run_single_learn_phi_ope_main.py --outfile <result-file-name> --seed 0 --env_name <env> --gamma 0.99 --epochs 300000 --exp_name fqe --normalize_states true --normalize_rewards false  --Q_hidden_dim 256 --dataset_name <ds-name> --samples_to_collect <ds-size> --d4rl_dataset <d4rl-flag> --fqe_clip_target <fqe-clip-flag>
 ```
 
-**2. Training ROPE**
+**2. Training ROPE + FQE**
+This command will pre-train ROPE representations, and then execute FQE using the pre-trained representations.
 ```
 python3 run_single_learn_phi_ope_main.py --outfile <result-file-name> --seed 0 --env_name <env> --gamma 0.99 --epochs 300000 --encoder_name off-policy-sa --phi_epochs 300000 --exp_name fqe --normalize_states true --normalize_rewards false --rep_layer_norm true --phi_hidden_dim 256 --Q_hidden_dim 256 --dataset_name <ds-name> --samples_to_collect <ds-size> --d4rl_dataset <d4rl-flag> --fqe_clip_target false
 ```
