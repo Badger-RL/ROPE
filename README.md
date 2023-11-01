@@ -2,6 +2,50 @@
 
 This is the source code accompanying the paper [***State-Action Similarity-Based Representations for Off-Policy Evaluation***](https://arxiv.org/abs/2310.18409) by Brahma S. Pavse and Josiah P. Hanna.
 
+## Directory Structure
+```
+.
+├── cheetah
+│   └── policies
+│       ├── cheetah_model_sac_420000_steps.zip (custom dataset evaluation/expert pi)
+│       ├── cheetah_model_sac_60000_steps.zip (custom dataset behavior/medium pi)
+│       ├── halfcheetah_online_10.pkl (d4rl dataset evaluation/expert pi)
+│       └── halfcheetah_online_5.pkl (d4rl dataset behavior/medium pi)
+├── hopper
+│   └── policies
+│       ├── hopper_online_10.pkl (d4rl dataset evaluation/expert pi)
+│       └── hopper_online_5.pkl (d4rl dataset behavior/medium pi)
+├── humanoidstandup
+│   └── policies
+│       ├── humstd_model_sac_200000_steps.zip (custom dataset behavior/medium pi) 
+│       └── humstd_model_sac_350000_steps.zip (custom dataset evaluation/expert pi)
+├── mujoco_xmls
+│   └── custom_swimmer.xml (custom body design of swimmer)
+├── swimmer
+│   └── policies
+│       ├── swimmer_model_sac_220000_steps.zip (custom dataset behavior/medium pi) 
+│       └── swimmer_model_sac_350000_steps.zip (custom dataset evaluation/expert pi)
+├── walker
+│   └── policies
+│       ├── walker_online_10.pkl (d4rl dataset evaluation/expert pi)
+│       └── walker_online_5.pkl (d4rl dataset behavior/medium pi)
+├── behavior_dataset.py (functionality to manage offline dataset such as sampling, normalization)
+├── cfg.yaml (specifies policies, dataset mixtures etc.)
+├── custom_cheetah.py (can be ignored since same as native v4 implementation)
+├── custom_humstd.py (can be ignored since same as native v4 implementation)
+├── custom_swimmer.py (loads a custom body design for swimmer; see above)
+├── estimators.py (produces policy value estimates using dataset)
+├── fqe.py (core FQE code)
+├── gen_offline_dataset.py (generates dataset according to specification)
+├── learn_phi.py (core ROPE code)
+├── plot.py (plotting code for reference)
+├── policies.py (includes policy wrapper code and torch neural network wrappers)
+├── README.md
+├── requirements.txt
+├── run_single_learn_phi_ope_main.py (main launch script)
+└── utils.py (supporting utility code)
+```
+
 ## Requirements
 The required libraries can be installed as follows:
 
